@@ -21,7 +21,7 @@ var editItem = require('./routes/editItem');
 MongoDB Connection
 ********************************/
 const mongoUri = config.mongo.host;
-mongoose.connect(mongoUri, { server: { socketOptions: { keepAlive: 1 } } });
+mongoose.connect(mongoUri);
 mongoose.connection.on('error', () => {
   throw new Error(`unable to connect to database: ${mongoUri}`);
 });
